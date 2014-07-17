@@ -12,11 +12,18 @@ class Task {
 
 	private:
 		map<string, string> keyValuePairs;
+		string filename;
 
 	public:
-		virtual void initTaskFromPacket(Packet* packet) = 0;
-		virtual void performTask() = 0;
+		virtual map<string, string> perform() = 0;
+		
+		string getFilename() {
+			return this->filename;
+		}
 
+		map<string, string> getKeyValuePairs() {
+			return this->keyValuePairs;
+		}
 }; 
 
 #endif

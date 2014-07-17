@@ -7,9 +7,10 @@
 #include "Task.h"
 
 class ReduceTask : public Task {
+
 	public:
-		void initTaskFromPacket();	
-		void performTask();
+		ReduceTask(Packet* packet);	
+		map<string,string> performTask();
 }
 
 #endif

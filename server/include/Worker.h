@@ -4,6 +4,10 @@
 #include <iostream>
 #include <string>
 
+
+#include "../../file/include/FileManager.h"
+#include "../../task/Task.h"
+
 using namespace std;
 
 class Worker {
@@ -12,6 +16,7 @@ class Worker {
 
 		int port;
 		SocketManager sockManager;
+		FileManager fileManager;
 
 	public:
 
@@ -19,18 +24,13 @@ class Worker {
 
 		void waitForMasterConn();
 
-		void receiveTask();
+		Task receiveTask();
 
-		void performMapTask();
-
-		void performReduceTask();
-
-		void performTask();
+		void performTask(Task task);
 		
 		void updateMaster();
 
 		void work();
-
 };
 
 #endif

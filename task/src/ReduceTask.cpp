@@ -1,12 +1,15 @@
 #include <iostream>
+#include <map>
 
 #include "../../comms/include/Packet.h"
 #include "../include/ReduceTask.h"
 
-ReduceTask::initTaskFromPacket(Packet* packet) {
-	//TODO
+using namespace std;
+
+void ReduceTask::ReduceTask(Packet* packet) {
+	this->keyValuePairs = packet->keyValuePairs;
 }
 
-ReduceTask::performTask() {
-	//TODO
+map<string, string> ReduceTask::perform() {
+	return this->keyValuePairs;
 }
