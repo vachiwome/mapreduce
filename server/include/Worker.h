@@ -28,7 +28,7 @@ class Worker {
 
 		void performTask(Task task);
 		
-		void updateMaster();
+		void updateMaster(Task task);
 
 		void work();
 };

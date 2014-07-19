@@ -6,6 +6,7 @@
 #include <map>
 
 #include "../../comms/SocketManager.h"
+#include "../../comms/Packet.h"
 #include "../task/Task.h"
 
 using namespace std;
@@ -30,6 +31,8 @@ public:
 
 	Master(map<string, int> workersAddr, map<string, string> input);
 
+	void work();
+	
 	void connectToWorkers();
 
 	void sendMapTask(string hostname, int portno, map<string, string> kVPairs);
@@ -37,6 +40,10 @@ public:
 	void sendReduceTask(string hostname, int portno, map<string, string> kVPairs);
 
 	void distributeMapTasks();
+
+	void processResponsePacket(Packet* packet);
+
+	void assignTask(int startInput, int endInput, string hostname, int portno);
 
 	void manageWorker(string hostname, int portno);
 

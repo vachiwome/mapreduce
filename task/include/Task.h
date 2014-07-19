@@ -2,6 +2,7 @@
 #define TASK_HH
 
 #include <iostream>
+#include <string>
 #include <map>
 
 #include "../comms/include/Packet.h"
@@ -24,6 +25,15 @@ class Task {
 		map<string, string> getKeyValuePairs() {
 			return this->keyValuePairs;
 		}
+
+		void setFilename(string filename) {
+			this->filename = filename;
+		}
 }; 
 
 #endif
+
+
+
+
+

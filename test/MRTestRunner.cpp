@@ -8,7 +8,8 @@ int main( int argc, char **argv) {
 
   runner.addTest(SocketManagerTest::suite());
   runner.addTest(PacketTest::suite());
-
+  runner.addTest(MasterWorkerTest::suite());
+  
   runner.run();
 
   return 0;

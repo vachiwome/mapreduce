@@ -21,7 +21,8 @@ typedef struct Packet Packet;
 
 enum PacketType {
 	MAP,
-	REDUCE
+	REDUCE,
+	FINISHED
 };
 
 Packet* charArrToPacket(char* buffer);
